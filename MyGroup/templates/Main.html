@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html {% load staticfiles %} lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet" type="text/css">
+        <link rel="icon" type="image/png" href="{% static 'img/kpi.jpg' %}">
+        <link rel="stylesheet" href="{% static 'css/interpreter.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/CheckIn.css' %}" type="text/css">
+        <title>Вхід</title>
+    </head>
+    <body style="background-attachment:fixed">
+        <div class="block">
+            <button id="Register">зареєструватись</button>
+            <div id="MyCheck_in" class="CheckIn">
+                <div class="check_in-content">
+                    <span class="close">&times;</span>
+                    <div class="page-header1">
+                        <h1>РЕЄСТРАЦІЯ</h1>
+                    </div>
+                    <form action="{% static 'php/reg.php' %}" method="POST" name="form1" enctype="multipart/form-data">
+                        <label for="FirstName"></label>
+                        <p class="FName">Ім`я:</p>
+                        <p align="center"><input type="text" name="FirstName" id="FirstName" autocomplete="off" autofocus></p>
+
+                        <label for="SecondName"></label>
+                        <p class="SName">Фамілия:</p>
+                        <p align="center"><input type="text" name="SecondName" id="SecondName" autocomplete="off"></p>
+
+                        <label for="email"></label>
+                        <p class="email">E-mail:</p>
+                        <p align="center"><input type="email" name="email" id="email" autocomplete="off"></p>
+
+                        <label for="password1"></label>
+                        <p class="email">Введіть пароль:</p>
+                        <p align="center"><input type="password" name="password1" id="password1" autocomplete="off"></p>
+
+                        <label for="password2"></label>
+                        <p class="email">Повторіть пароль:</p>
+                        <p align="center"><input type="password" name="password2" id="password2" autocomplete="off"></p>
+
+                        <p align="center">
+                            <input type="submit" name="Button2" id="Button2" value="Відправити">
+                            <input type="reset" name="Button1" id="Button1" value="Очистити">
+                        </p>
+                    </form>
+                </div>
+            </div>
+            <script src="{% static 'js/CheckIn.js' %}"></script>
+            <div class="Entrance">
+                <h1 align="center">exit</h1>
+            </div>
+
+            <form action="{% static 'php/index.php' %}" method="POST" name="form">
+                <label for="login"></label>
+                <p align="center"><input type="text" name="login" id="login" placeholder="Введіть логін" autocomplete="off" autofocus></p>
+
+                <label for="password"></label>
+                <p align="center"><input type="password" name="password" id="password" placeholder="Введіть пароль" autocomplete="off"></p>
+
+                <p align="center"><input type="submit" name="Button" id="Button" value="Увійти"></p>
+            </form>
+        </div>
+    </body>
+</html>
